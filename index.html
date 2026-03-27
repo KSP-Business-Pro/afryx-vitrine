@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Afryx.io — Solutions Numériques pour l'Afrique</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════
+   VARIABLES & RESET
+══════════════════════════════════════════════ */
+:root {
+  --fire:    #E8520A;
+  --gold:    #D4A017;
+  --forest:  #1E5C3A;
+  --night:   #120B06;
+  --ink:     #1F1208;
+  --cream:   #FDF6EC;
+  --sand:    #F5E6CC;
+  --smoke:   #7A6A5A;
+  --white:   #FFFFFF;
+  --radius:  18px;
+}
+*, *::before, *::after { margin:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'Outfit',sans-serif;
+  background:var(--night);
+  color:var(--cream);
+  overflow-x:hidden;
+}
+
+/* ══════════════════════════════════════════════
+   TEXTURE & PATTERN OVERLAY
+══════════════════════════════════════════════ */
+.kente-bg {
+  position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.035;
+  background-image:
+    repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%),
+    repeating-linear-gradient(-45deg, var(--fire) 0, var(--fire) 1px, transparent 0, transparent 50%);
+  background-size:28px 28px;
+}
+
+/* ══════════════════════════════════════════════
+   NAV
+══════════════════════════════════════════════ */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:1.1rem 2.5rem;
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(18,11,6,.85);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(212,160,23,.15);
+}
+.nav-logo {
+  font-family:'Syne',sans-serif;
+  font-size:22px; font-weight:800;
+  letter-spacing:-.02em;
+  display:flex; align-items:center; gap:8px;
+}
+.nav-logo .dot {
+  width:10px; height:10px; border-radius:50%;
+  background:var(--fire);
+  box-shadow:0 0 14px var(--fire);
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.3);opacity:.7} }
+.nav-logo span { color:var(--gold); }
+.nav-links { display:flex; gap:2rem; align-items:center; }
+.nav-links a {
+  font-size:14px; font-weight:500; color:rgba(253,246,236,.6);
+  text-decoration:none; transition:color .2s;
+}
+.nav-links a:hover { color:var(--cream); }
+.nav-cta {
+  background:var(--fire); color:#fff;
+  padding:9px 22px; border-radius:50px;
+  font-size:13.5px; font-weight:600;
+  text-decoration:none; transition:all .2s;
+  box-shadow:0 0 20px rgba(232,82,10,.4);
+}
+.nav-cta:hover { background:#ff6a2a; transform:translateY(-1px); box-shadow:0 0 30px rgba(232,82,10,.6); }
+
+/* ══════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════ */
+.hero {
+  position:relative; z-index:1;
+  min-height:100vh;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center;
+  padding:8rem 2rem 4rem;
+  overflow:hidden;
+}
+/* Glow orbs */
+.hero::before {
+  content:'';
+  position:absolute; width:700px; height:700px; border-radius:50%;
+  background:radial-gradient(circle, rgba(232,82,10,.2) 0%, transparent 70%);
+  top:-100px; left:50%; transform:translateX(-50%);
+  pointer-events:none;
+}
+.hero::after {
+  content:'';
+  position:absolute; width:500px; height:500px; border-radius:50%;
+  background:radial-gradient(circle, rgba(212,160,23,.12) 0%, transparent 70%);
+  bottom:0; right:-100px;
+  pointer-events:none;
+}
+
+.hero-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(212,160,23,.12); border:1px solid rgba(212,160,23,.3);
+  border-radius:50px; padding:7px 18px;
+  font-size:12.5px; font-weight:600; color:var(--gold);
+  letter-spacing:.06em; text-transform:uppercase;
+  margin-bottom:2.5rem;
+  animation:fadeUp .8s ease both;
+}
+.hero-badge .flag { font-size:16px; }
+
+.hero-title {
+  font-family:'Syne',sans-serif;
+  font-size:clamp(48px, 8vw, 88px);
+  font-weight:800; line-height:1.0;
+  letter-spacing:-.03em;
+  margin-bottom:1.5rem;
+  animation:fadeUp .8s .1s ease both;
+}
+.hero-title .line1 { display:block; color:var(--cream); }
+.hero-title .line2 {
+  display:block;
+  background:linear-gradient(90deg, var(--fire), var(--gold), #FF9A3C);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-title .line3 { display:block; color:rgba(253,246,236,.35); font-size:.55em; font-weight:600; letter-spacing:.01em; margin-top:.3em; }
+
+.hero-sub {
+  font-size:clamp(15px, 2vw, 18px); font-weight:400;
+  color:rgba(253,246,236,.55); max-width:560px; line-height:1.7;
+  margin-bottom:3rem;
+  animation:fadeUp .8s .2s ease both;
+}
+.hero-sub strong { color:var(--gold); font-weight:600; }
+
+.hero-actions {
+  display:flex; gap:1rem; align-items:center; justify-content:center; flex-wrap:wrap;
+  margin-bottom:4rem;
+  animation:fadeUp .8s .3s ease both;
+}
+.btn-primary {
+  background:linear-gradient(135deg, var(--fire), #FF6A2A);
+  color:#fff; padding:14px 32px;
+  border-radius:50px; font-size:15px; font-weight:700;
+  text-decoration:none; transition:all .25s;
+  box-shadow:0 8px 32px rgba(232,82,10,.4);
+  font-family:'Outfit',sans-serif;
+}
+.btn-primary:hover { transform:translateY(-2px); box-shadow:0 12px 40px rgba(232,82,10,.6); }
+.btn-outline {
+  border:1.5px solid rgba(253,246,236,.2); color:var(--cream);
+  padding:13px 28px; border-radius:50px; font-size:15px; font-weight:500;
+  text-decoration:none; transition:all .25s; font-family:'Outfit',sans-serif;
+}
+.btn-outline:hover { border-color:var(--gold); color:var(--gold); }
+
+/* Stats bar */
+.hero-stats {
+  display:flex; gap:3rem; justify-content:center; flex-wrap:wrap;
+  padding-top:3rem; border-top:1px solid rgba(253,246,236,.08);
+  animation:fadeUp .8s .4s ease both;
+}
+.hero-stat { text-align:center; }
+.hero-stat .sv { font-family:'Syne',sans-serif; font-size:32px; font-weight:800; color:var(--gold); }
+.hero-stat .sl { font-size:12px; color:rgba(253,246,236,.4); font-weight:500; text-transform:uppercase; letter-spacing:.06em; margin-top:2px; }
+
+/* ══════════════════════════════════════════════
+   SECTION COMMUNE
+══════════════════════════════════════════════ */
+section { position:relative; z-index:1; }
+.section-inner { max-width:1160px; margin:0 auto; padding:5rem 2rem; }
+.section-label {
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:11.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--fire); margin-bottom:1rem;
+}
+.section-label::before { content:''; width:28px; height:2px; background:var(--fire); border-radius:2px; }
+.section-title {
+  font-family:'Syne',sans-serif;
+  font-size:clamp(32px, 4vw, 48px); font-weight:800;
+  line-height:1.1; letter-spacing:-.02em;
+  color:var(--cream); margin-bottom:1rem;
+}
+.section-title span { color:var(--gold); }
+.section-sub { font-size:16px; color:rgba(253,246,236,.5); max-width:520px; line-height:1.7; }
+
+/* ══════════════════════════════════════════════
+   PRODUITS
+══════════════════════════════════════════════ */
+.products-section { background:rgba(255,255,255,.02); }
+.products-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:1.5rem; margin-top:3rem;
+}
+.product-card {
+  background:rgba(253,246,236,.04);
+  border:1px solid rgba(253,246,236,.08);
+  border-radius:var(--radius); padding:1.8rem;
+  transition:all .3s ease;
+  position:relative; overflow:hidden;
+  cursor:pointer;
+}
+.product-card::before {
+  content:'';
+  position:absolute; inset:0; opacity:0;
+  transition:opacity .3s;
+}
+.product-card:hover { transform:translateY(-6px); border-color:rgba(253,246,236,.15); }
+.product-card:hover::before { opacity:1; }
+
+/* Couleurs par produit */
+.product-card.edulink  { --pc:#1E5C8A; --pcl:rgba(30,92,138,.12); }
+.product-card.agro     { --pc:#2D6A4F; --pcl:rgba(45,106,79,.12); }
+.product-card.fk       { --pc:#8B5E15; --pcl:rgba(139,94,21,.12); }
+.product-card.ksp      { --pc:#6B2D8B; --pcl:rgba(107,45,139,.12); }
+
+.product-card::before { background:var(--pcl); }
+.product-card:hover { box-shadow:0 20px 60px rgba(0,0,0,.3); }
+
+.pc-icon {
+  width:54px; height:54px; border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:26px; margin-bottom:1.2rem;
+  background:var(--pcl);
+  border:1px solid color-mix(in srgb, var(--pc) 30%, transparent);
+}
+.pc-badge {
+  display:inline-block;
+  font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  padding:3px 10px; border-radius:20px;
+  background:var(--pcl);
+  color:color-mix(in srgb, var(--pc) 80%, var(--cream));
+  border:1px solid color-mix(in srgb, var(--pc) 30%, transparent);
+  margin-bottom:1rem;
+}
+.pc-name {
+  font-family:'Syne',sans-serif; font-size:20px; font-weight:700;
+  color:var(--cream); margin-bottom:.5rem;
+}
+.pc-desc { font-size:13.5px; color:rgba(253,246,236,.5); line-height:1.6; margin-bottom:1.2rem; }
+.pc-features { list-style:none; }
+.pc-features li {
+  display:flex; align-items:center; gap:8px;
+  font-size:13px; color:rgba(253,246,236,.4);
+  padding:4px 0; border-bottom:1px solid rgba(253,246,236,.05);
+}
+.pc-features li:last-child { border-bottom:none; }
+.pc-features li::before { content:'→'; color:var(--fire); font-size:11px; flex-shrink:0; }
+.pc-link {
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:13px; font-weight:600; color:var(--gold);
+  margin-top:1.2rem; text-decoration:none; transition:gap .2s;
+}
+.pc-link:hover { gap:10px; }
+
+/* Badge NEW / SOON */
+.product-card .tag-soon {
+  position:absolute; top:1.2rem; right:1.2rem;
+  font-size:9px; font-weight:800; letter-spacing:.1em;
+  padding:3px 8px; border-radius:4px;
+  background:rgba(212,160,23,.15); color:var(--gold);
+  border:1px solid rgba(212,160,23,.3);
+  text-transform:uppercase;
+}
+.product-card .tag-live {
+  position:absolute; top:1.2rem; right:1.2rem;
+  font-size:9px; font-weight:800; letter-spacing:.1em;
+  padding:3px 8px; border-radius:4px;
+  background:rgba(30,92,58,.3); color:#4ADE80;
+  border:1px solid rgba(74,222,128,.25);
+  text-transform:uppercase;
+  display:flex; align-items:center; gap:4px;
+}
+.tag-live::before {
+  content:''; width:5px; height:5px; border-radius:50%;
+  background:#4ADE80;
+  animation:pulse 1.5s ease infinite;
+}
+
+/* ══════════════════════════════════════════════
+   WHY AFRYX
+══════════════════════════════════════════════ */
+.why-grid {
+  display:grid; grid-template-columns:1fr 1fr 1fr;
+  gap:1px; background:rgba(253,246,236,.06);
+  border-radius:var(--radius); overflow:hidden;
+  margin-top:3rem;
+}
+.why-item {
+  background:var(--night); padding:2.2rem;
+  transition:background .3s;
+}
+.why-item:hover { background:rgba(253,246,236,.03); }
+.why-ico { font-size:32px; margin-bottom:1rem; }
+.why-titre { font-family:'Syne',sans-serif; font-size:17px; font-weight:700; color:var(--cream); margin-bottom:.6rem; }
+.why-txt { font-size:13.5px; color:rgba(253,246,236,.45); line-height:1.7; }
+
+/* ══════════════════════════════════════════════
+   MARCHÉ / CARTE AFRIQUE
+══════════════════════════════════════════════ */
+.market-section {
+  background:linear-gradient(135deg, rgba(30,92,58,.08), rgba(232,82,10,.05));
+}
+.market-layout { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+.market-map {
+  position:relative; display:flex; align-items:center; justify-content:center;
+}
+.map-blob {
+  width:100%; max-width:400px; aspect-ratio:1;
+  border-radius:50%; border:1px solid rgba(212,160,23,.15);
+  display:flex; align-items:center; justify-content:center;
+  position:relative;
+  background:radial-gradient(circle at 40% 40%, rgba(232,82,10,.08), rgba(30,92,58,.06), transparent);
+}
+.map-blob .map-emoji { font-size:120px; filter:grayscale(0.3); }
+.map-ping {
+  position:absolute; width:14px; height:14px; border-radius:50%;
+  background:var(--fire); box-shadow:0 0 20px var(--fire);
+  animation:pulse 2s ease infinite;
+}
+.map-ping::after {
+  content:''; position:absolute; inset:-6px; border-radius:50%;
+  border:1.5px solid rgba(232,82,10,.4); animation:ping-ring 2s ease infinite;
+}
+@keyframes ping-ring { 0%{transform:scale(1);opacity:1} 100%{transform:scale(2.5);opacity:0} }
+.ping-1 { top:30%; left:40%; }
+.ping-2 { top:45%; left:25%; animation-delay:.4s; }
+.ping-3 { top:60%; left:50%; animation-delay:.8s; }
+.ping-4 { top:35%; left:60%; animation-delay:1.2s; }
+
+.market-pays {
+  display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.5rem;
+}
+.pays-pill {
+  display:flex; align-items:center; gap:6px;
+  background:rgba(253,246,236,.05); border:1px solid rgba(253,246,236,.1);
+  border-radius:50px; padding:5px 14px;
+  font-size:13px; font-weight:500; color:rgba(253,246,236,.65);
+  transition:all .2s;
+}
+.pays-pill:hover { background:rgba(212,160,23,.1); border-color:var(--gold); color:var(--gold); }
+
+/* ══════════════════════════════════════════════
+   CTA FINAL
+══════════════════════════════════════════════ */
+.cta-section {
+  background:linear-gradient(135deg, rgba(232,82,10,.15) 0%, rgba(212,160,23,.08) 100%);
+  border-top:1px solid rgba(232,82,10,.15);
+}
+.cta-inner {
+  text-align:center; max-width:700px; margin:0 auto;
+  padding:6rem 2rem;
+}
+.cta-inner h2 {
+  font-family:'Syne',sans-serif;
+  font-size:clamp(36px, 5vw, 56px); font-weight:800;
+  line-height:1.1; letter-spacing:-.02em; margin-bottom:1rem;
+}
+.cta-inner h2 span { color:var(--gold); }
+.cta-inner p { font-size:16px; color:rgba(253,246,236,.5); margin-bottom:2.5rem; }
+.cta-email {
+  display:flex; gap:.75rem; max-width:440px; margin:0 auto;
+  background:rgba(253,246,236,.06); border:1px solid rgba(253,246,236,.12);
+  border-radius:50px; padding:.5rem .5rem .5rem 1.5rem;
+}
+.cta-email input {
+  flex:1; background:transparent; border:none; outline:none;
+  font-size:14px; color:var(--cream); font-family:'Outfit',sans-serif;
+}
+.cta-email input::placeholder { color:rgba(253,246,236,.3); }
+.cta-email button {
+  background:var(--fire); color:#fff; border:none;
+  padding:11px 24px; border-radius:50px; font-size:14px; font-weight:700;
+  cursor:pointer; font-family:'Outfit',sans-serif; transition:all .2s;
+  white-space:nowrap;
+}
+.cta-email button:hover { background:#ff6a2a; }
+
+/* ══════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════ */
+footer {
+  position:relative; z-index:1;
+  border-top:1px solid rgba(253,246,236,.06);
+  padding:2rem 2.5rem;
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;
+}
+.footer-logo { font-family:'Syne',sans-serif; font-size:18px; font-weight:800; color:rgba(253,246,236,.4); }
+.footer-logo span { color:rgba(212,160,23,.6); }
+.footer-copy { font-size:13px; color:rgba(253,246,236,.25); }
+.footer-links { display:flex; gap:1.5rem; }
+.footer-links a { font-size:13px; color:rgba(253,246,236,.3); text-decoration:none; transition:color .2s; }
+.footer-links a:hover { color:var(--gold); }
+
+/* ══════════════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(24px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.reveal { opacity:0; transform:translateY(30px); transition:all .7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════ */
+@media(max-width:900px) {
+  nav { padding:1rem 1.5rem; }
+  .nav-links { display:none; }
+  .why-grid { grid-template-columns:1fr; gap:0; }
+  .market-layout { grid-template-columns:1fr; gap:2rem; }
+  .map-blob { max-width:280px; }
+  .map-blob .map-emoji { font-size:80px; }
+  footer { flex-direction:column; text-align:center; }
+}
+@media(max-width:600px) {
+  .hero-stats { gap:2rem; }
+  .products-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Texture -->
+<div class="kente-bg"></div>
+
+<!-- ═══════ NAV ═══════ -->
+<nav>
+  <div class="nav-logo">
+    <div class="dot"></div>
+    Afryx<span>.io</span>
+  </div>
+  <div class="nav-links">
+    <a href="#produits">Produits</a>
+    <a href="#marche">Marchés</a>
+    <a href="#vision">Vision</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Démarrer →</a>
+</nav>
+
+<!-- ═══════ HERO ═══════ -->
+<div class="hero">
+  <div class="hero-badge">
+    <span class="flag">🌍</span>
+    Technologie africaine · Bénin · 2026
+  </div>
+  <h1 class="hero-title">
+    <span class="line1">Le numérique</span>
+    <span class="line2">au service de l'Afrique</span>
+    <span class="line3">Solutions SaaS · Éducation · Agriculture · Business</span>
+  </h1>
+  <p class="hero-sub">
+    Afryx.io conçoit des outils numériques <strong>pensés pour les réalités africaines</strong> — 
+    accessibles, efficaces et adaptés aux marchés francophones.
+  </p>
+  <div class="hero-actions">
+    <a href="#produits" class="btn-primary">Découvrir nos produits</a>
+    <a href="#contact"  class="btn-outline">Nous contacter</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="sv">4</div><div class="sl">Produits SaaS</div></div>
+    <div class="hero-stat"><div class="sv">15+</div><div class="sl">Pays cibles</div></div>
+    <div class="hero-stat"><div class="sv">.io</div><div class="sl">Domaine tech</div></div>
+    <div class="hero-stat"><div class="sv">2026</div><div class="sl">Lancé au Bénin</div></div>
+  </div>
+</div>
+
+<!-- ═══════ PRODUITS ═══════ -->
+<section class="products-section" id="produits">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Nos produits</div>
+      <h2 class="section-title">Un écosystème <span>complet</span></h2>
+      <p class="section-sub">Quatre solutions SaaS pour digitaliser l'éducation, l'agriculture et le business en Afrique francophone.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- EduLink -->
+      <div class="product-card edulink reveal">
+        <div class="tag-live">Live</div>
+        <div class="pc-icon">🎓</div>
+        <div class="pc-badge">Éducation</div>
+        <div class="pc-name">EduLink</div>
+        <p class="pc-desc">Plateforme complète de gestion scolaire — notes, présences, paiements, bulletins et analytics IA.</p>
+        <ul class="pc-features">
+          <li>Gestion étudiants & classes</li>
+          <li>Bulletins PDF automatiques</li>
+          <li>Portail famille & enseignants</li>
+          <li>Analytics & prédictions IA</li>
+          <li>Mode hors-ligne intégré</li>
+        </ul>
+        <a href="https://edulink-backoffice.vercel.app" class="pc-link" target="_blank">Accéder à EduLink →</a>
+      </div>
+
+      <!-- AgroYield -->
+      <div class="product-card agro reveal">
+        <div class="tag-soon">Bientôt</div>
+        <div class="pc-icon">🌾</div>
+        <div class="pc-badge">Agriculture</div>
+        <div class="pc-name">AgroYield</div>
+        <p class="pc-desc">Optimisation des rendements agricoles grâce à l'IA — météo, sols, prédictions de récolte.</p>
+        <ul class="pc-features">
+          <li>Prédiction de rendements</li>
+          <li>Alertes météo locales</li>
+          <li>Analyse de sol intelligente</li>
+          <li>Conseils agronomiques IA</li>
+          <li>Adapté aux cultures africaines</li>
+        </ul>
+        <a href="#contact" class="pc-link">Rejoindre la liste d'attente →</a>
+      </div>
+
+      <!-- FKAgroManager -->
+      <div class="product-card fk reveal">
+        <div class="tag-soon">Bientôt</div>
+        <div class="pc-icon">🚜</div>
+        <div class="pc-badge">Gestion agricole</div>
+        <div class="pc-name">FKAgroManager</div>
+        <p class="pc-desc">Gestion opérationnelle des exploitations agricoles — stocks, équipements, personnel de terrain.</p>
+        <ul class="pc-features">
+          <li>Gestion des exploitations</li>
+          <li>Suivi des stocks & intrants</li>
+          <li>Planning des travaux</li>
+          <li>Comptabilité agricole</li>
+          <li>Rapports de production</li>
+        </ul>
+        <a href="#contact" class="pc-link">Rejoindre la liste d'attente →</a>
+      </div>
+
+      <!-- KSP Business -->
+      <div class="product-card ksp reveal">
+        <div class="tag-soon">Bientôt</div>
+        <div class="pc-icon">💼</div>
+        <div class="pc-badge">Business</div>
+        <div class="pc-name">KSP Business</div>
+        <p class="pc-desc">Suite de gestion d'entreprise pour PME africaines — comptabilité, RH, clients, facturation.</p>
+        <ul class="pc-features">
+          <li>Facturation & devis</li>
+          <li>Gestion RH & paie</li>
+          <li>CRM clients intégré</li>
+          <li>Comptabilité OHADA</li>
+          <li>Tableaux de bord temps réel</li>
+        </ul>
+        <a href="#contact" class="pc-link">Rejoindre la liste d'attente →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ POURQUOI AFRYX ═══════ -->
+<section id="vision">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;max-width:700px;margin:0 auto 0">
+      <div class="section-label">Notre vision</div>
+      <h2 class="section-title">Pourquoi <span>Afryx.io</span> ?</h2>
+      <p class="section-sub" style="margin:0 auto">Des solutions créées à partir du terrain africain, par des Africains, pour les besoins réels du continent.</p>
+    </div>
+    <div class="why-grid reveal" style="margin-top:3rem">
+      <div class="why-item">
+        <div class="why-ico">🌍</div>
+        <div class="why-titre">Made in Africa</div>
+        <p class="why-txt">Nos outils sont conçus depuis le Bénin avec une compréhension profonde des réalités locales — langues, devises FCFA, pratiques métier.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-ico">⚡</div>
+        <div class="why-titre">Adapté aux contraintes</div>
+        <p class="why-txt">Mode hors-ligne, interfaces légères, compatibles avec les connexions bas débit. Nos apps fonctionnent même en zones peu couvertes.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-ico">🤖</div>
+        <div class="why-titre">Propulsé par l'IA</div>
+        <p class="why-txt">Chaque produit intègre de l'intelligence artificielle pour automatiser, prédire et aider à la décision — sans complexité technique.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-ico">🔒</div>
+        <div class="why-titre">Sécurité & confidentialité</div>
+        <p class="why-txt">Données hébergées en Europe (Supabase), chiffrement end-to-end, conformité RGPD. Vos données vous appartiennent.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-ico">📱</div>
+        <div class="why-titre">Multi-plateforme</div>
+        <p class="why-txt">Web, Android, iOS — un seul abonnement pour accéder à vos outils sur tous vos appareils, partout en Afrique.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-ico">🤝</div>
+        <div class="why-titre">Support local</div>
+        <p class="why-txt">Équipe basée à Cotonou, support en français, formation incluse et accompagnement à la prise en main de chaque solution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ MARCHÉ ═══════ -->
+<section class="market-section" id="marche">
+  <div class="section-inner">
+    <div class="market-layout">
+      <div class="reveal">
+        <div class="section-label">Marchés cibles</div>
+        <h2 class="section-title">L'Afrique <span>francophone</span></h2>
+        <p class="section-sub">15 pays, 300 millions d'habitants, une transformation numérique en marche. Afryx.io est positionné au cœur de cette révolution.</p>
+        <div class="market-pays" style="margin-top:2rem">
+          <div class="pays-pill">🇧🇯 Bénin</div>
+          <div class="pays-pill">🇨🇮 Côte d'Ivoire</div>
+          <div class="pays-pill">🇸🇳 Sénégal</div>
+          <div class="pays-pill">🇹🇬 Togo</div>
+          <div class="pays-pill">🇧🇫 Burkina Faso</div>
+          <div class="pays-pill">🇲🇱 Mali</div>
+          <div class="pays-pill">🇨🇲 Cameroun</div>
+          <div class="pays-pill">🇳🇪 Niger</div>
+          <div class="pays-pill">🇬🇳 Guinée</div>
+          <div class="pays-pill">🇲🇦 Maroc</div>
+          <div class="pays-pill">+ 5 pays</div>
+        </div>
+      </div>
+      <div class="market-map reveal">
+        <div class="map-blob">
+          <span class="map-emoji">🌍</span>
+          <div class="map-ping ping-1"></div>
+          <div class="map-ping ping-2"></div>
+          <div class="map-ping ping-3"></div>
+          <div class="map-ping ping-4"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CTA ═══════ -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner reveal">
+    <h2>Prêt à rejoindre<br><span>l'Afrique numérique ?</span></h2>
+    <p>Laissez votre email pour être informé des lancements et bénéficier d'un accès anticipé.</p>
+    <div class="cta-email">
+      <input type="email" placeholder="votre@email.com" />
+      <button onclick="this.textContent='✅ Envoyé !';this.style.background='#2D6A4F'">Rejoindre →</button>
+    </div>
+    <p style="font-size:12px;color:rgba(253,246,236,.2);margin-top:1rem">Pas de spam. Désabonnement en 1 clic. · contact@afryx.io</p>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="footer-logo">Afryx<span>.io</span></div>
+  <div class="footer-copy">© 2026 Afryx.io — AI Conseil Bénin · Tous droits réservés</div>
+  <div class="footer-links">
+    <a href="#">Mentions légales</a>
+    <a href="https://edulink-backoffice.vercel.app/privacy-policy.html" target="_blank">Confidentialité</a>
+    <a href="mailto:contact@afryx.io">Contact</a>
+  </div>
+</footer>
+
+<!-- ═══════ JS ═══════ -->
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Smooth nav
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
+  });
+});
+</script>
+</body>
+</html>
