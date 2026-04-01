@@ -372,6 +372,96 @@ h1 .break { display:block; }
 .vi-txt { font-size:12.5px; color:rgba(247,240,228,.4); line-height:1.6; }
 
 /* ══════════════════════════════════════════════
+   SECTION CONTACT
+══════════════════════════════════════════════ */
+.contact-section {
+  padding:5rem 3rem;
+  position:relative; z-index:1;
+  max-width:1100px; margin:0 auto;
+}
+.contact-grid {
+  display:grid; grid-template-columns:1fr 1.2fr; gap:4rem; align-items:start;
+}
+.contact-info {}
+.contact-info h2 {
+  font-family:'Cabinet Grotesk',sans-serif;
+  font-size:clamp(30px,4vw,44px); font-weight:900;
+  line-height:1.1; letter-spacing:-.02em; margin-bottom:1rem;
+}
+.contact-info h2 span { color:var(--gold); }
+.contact-info p { font-size:15px; color:rgba(247,240,228,.5); line-height:1.8; margin-bottom:2rem; }
+.contact-item {
+  display:flex; align-items:center; gap:1rem;
+  padding:1rem; border-radius:12px;
+  border:1px solid rgba(247,240,228,.07);
+  background:rgba(247,240,228,.03);
+  margin-bottom:.75rem; transition:all .2s;
+}
+.contact-item:hover { border-color:rgba(240,180,41,.2); background:rgba(240,180,41,.05); }
+.ci-ico { width:42px; height:42px; border-radius:10px; background:rgba(74,158,100,.15); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+.ci-body .ci-lbl { font-size:11px; font-weight:700; color:rgba(247,240,228,.35); text-transform:uppercase; letter-spacing:.07em; }
+.ci-body .ci-val { font-size:14px; font-weight:600; color:var(--cream); margin-top:2px; }
+
+/* Formulaire */
+.contact-form-wrap {
+  background:rgba(247,240,228,.04);
+  border:1px solid rgba(247,240,228,.08);
+  border-radius:20px; padding:2rem;
+}
+.contact-form-wrap h3 {
+  font-family:'Cabinet Grotesk',sans-serif;
+  font-size:20px; font-weight:800; color:var(--cream);
+  margin-bottom:1.5rem;
+}
+.cf-group { margin-bottom:1.2rem; }
+.cf-group label { display:block; font-size:12px; font-weight:700; color:rgba(247,240,228,.5); text-transform:uppercase; letter-spacing:.06em; margin-bottom:.5rem; }
+.cf-group input,
+.cf-group select,
+.cf-group textarea {
+  width:100%; padding:12px 16px;
+  background:rgba(247,240,228,.06);
+  border:1.5px solid rgba(247,240,228,.1);
+  border-radius:10px; color:var(--cream);
+  font-size:14px; font-family:'DM Sans',sans-serif;
+  outline:none; transition:border-color .2s;
+}
+.cf-group input::placeholder,
+.cf-group textarea::placeholder { color:rgba(247,240,228,.25); }
+.cf-group input:focus,
+.cf-group select:focus,
+.cf-group textarea:focus { border-color:var(--gold); }
+.cf-group select option { background:var(--earth); color:var(--cream); }
+.cf-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.cf-submit {
+  width:100%; padding:14px;
+  background:linear-gradient(135deg,var(--moss),#1a4a28);
+  color:var(--cream); border:none; border-radius:12px;
+  font-size:15px; font-weight:700; cursor:pointer;
+  font-family:'DM Sans',sans-serif; transition:all .25s;
+  margin-top:.5rem; letter-spacing:.02em;
+}
+.cf-submit:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(29,74,46,.4); }
+.cf-submit:disabled { opacity:.6; transform:none; cursor:default; }
+.cf-success {
+  display:none; text-align:center; padding:1.5rem;
+  background:rgba(74,158,100,.1); border:1px solid rgba(74,158,100,.2);
+  border-radius:12px; color:var(--leaf); font-weight:600; font-size:14px;
+}
+.cf-success.show { display:block; }
+.cf-error {
+  display:none; text-align:center; padding:.75rem;
+  background:rgba(220,38,38,.1); border:1px solid rgba(220,38,38,.2);
+  border-radius:8px; color:#F87171; font-size:13px; margin-top:.75rem;
+}
+.cf-error.show { display:block; }
+
+@media(max-width:900px){
+  .contact-grid { grid-template-columns:1fr; gap:2rem; }
+  .contact-section { padding:3rem 1.5rem; }
+  .cf-row { grid-template-columns:1fr; }
+}
+
+/* ══════════════════════════════════════════════
    CTA NEWSLETTER
 ══════════════════════════════════════════════ */
 .newsletter {
@@ -475,7 +565,8 @@ footer {
   </div>
   <div class="nav-right">
     <a href="#about" class="nav-link">Notre vision</a>
-    <a href="#newsletter" class="nav-link">Rester informé</a>
+    <a href="#contact-form" class="nav-link">Contact</a>
+    <a href="#newsletter" class="nav-link">Accès anticipé</a>
     <a href="#newsletter" class="nav-btn">Accès anticipé →</a>
   </div>
 </nav>
@@ -673,6 +764,117 @@ footer {
   </div>
 </section>
 
+
+<!-- CONTACT -->
+<section id="contact-form">
+<div class="contact-section reveal">
+  <div class="contact-grid">
+    <!-- Infos -->
+    <div class="contact-info">
+      <div class="about-eyebrow">Contactez-nous</div>
+      <h2>Parlons de votre <span>projet digital</span></h2>
+      <p>Vous avez une question sur nos produits, un partenariat à proposer ou vous souhaitez déployer EduLink dans votre établissement ? Écrivez-nous.</p>
+
+      <div class="contact-item">
+        <div class="ci-ico">📧</div>
+        <div class="ci-body">
+          <div class="ci-lbl">Email général</div>
+          <div class="ci-val">contact@afryx.io</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-ico">🎓</div>
+        <div class="ci-body">
+          <div class="ci-lbl">EduLink — Écoles</div>
+          <div class="ci-val">info@afryx.io</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-ico">🛠️</div>
+        <div class="ci-body">
+          <div class="ci-lbl">Support technique</div>
+          <div class="ci-val">soutien@afryx.io</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-ico">📍</div>
+        <div class="ci-body">
+          <div class="ci-lbl">Localisation</div>
+          <div class="ci-val">Cotonou, Bénin 🇧🇯</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-ico">⏰</div>
+        <div class="ci-body">
+          <div class="ci-lbl">Disponibilité</div>
+          <div class="ci-val">Lun–Ven · 8h00 – 18h00 (GMT+1)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulaire Formspree -->
+    <div class="contact-form-wrap">
+      <h3>✉️ Envoyez-nous un message</h3>
+
+      <!-- Remplacez YOUR_FORM_ID par votre ID Formspree -->
+      <form id="contact-form-el" action="https://formspree.io/f/mykbpgke" method="POST">
+        <input type="hidden" name="_subject" value="Nouveau message depuis afryx.io" />
+        <input type="hidden" name="_replyto" value="" />
+
+        <div class="cf-row">
+          <div class="cf-group">
+            <label>Prénom *</label>
+            <input type="text" name="prenom" placeholder="Votre prénom" required />
+          </div>
+          <div class="cf-group">
+            <label>Nom *</label>
+            <input type="text" name="nom" placeholder="Votre nom" required />
+          </div>
+        </div>
+
+        <div class="cf-group">
+          <label>Email *</label>
+          <input type="email" name="email" placeholder="votre@email.com" required />
+        </div>
+
+        <div class="cf-group">
+          <label>Sujet *</label>
+          <select name="sujet" required>
+            <option value="">Choisissez un sujet...</option>
+            <option value="edulink">🎓 EduLink — Gestion scolaire</option>
+            <option value="agroyield">🌾 AgroYield — Agriculture</option>
+            <option value="partenariat">🤝 Partenariat / Collaboration</option>
+            <option value="demo">👁️ Demande de démonstration</option>
+            <option value="support">🛠️ Support technique</option>
+            <option value="autre">💬 Autre demande</option>
+          </select>
+        </div>
+
+        <div class="cf-group">
+          <label>Message *</label>
+          <textarea name="message" rows="5" placeholder="Décrivez votre besoin ou votre question..." required></textarea>
+        </div>
+
+        <div class="cf-group">
+          <label>Téléphone (optionnel)</label>
+          <input type="tel" name="telephone" placeholder="+229 XX XX XX XX" />
+        </div>
+
+        <button type="submit" class="cf-submit" id="cf-btn">📤 Envoyer le message</button>
+      </form>
+
+      <div class="cf-success" id="cf-success">
+        ✅ Message envoyé avec succès !<br>
+        <span style="font-size:13px;font-weight:400;opacity:.8">Nous vous répondrons sous 24h à l'adresse indiquée.</span>
+      </div>
+      <div class="cf-error" id="cf-error">
+        ❌ Erreur d'envoi. Veuillez réessayer ou écrire directement à contact@afryx.io
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
 <!-- NEWSLETTER -->
 <div class="newsletter reveal" id="newsletter">
   <div class="nl-left">
@@ -691,12 +893,12 @@ footer {
   <div class="footer-links">
     <a href="#">Mentions légales</a>
     <a href="#">Confidentialité</a>
-    <a href="mailto:contact@afryx.io">contact@afryx.io</a>
+    <a href="/cdn-cgi/l/email-protection#9bf8f4f5effaf8efdbfafde9e2e3b5f2f4"><span class="__cf_email__" data-cfemail="d5b6babba1b4b6a195b4b3a7acadfbbcba">[email&#160;protected]</span></a>
   </div>
   <div class="footer-copy">© 2026 Afryx.io · Cotonou, Bénin</div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Scroll reveal
 const obs = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {
@@ -706,6 +908,37 @@ const obs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Formspree contact form
+const contactForm = document.getElementById('contact-form-el');
+if (contactForm) {
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('cf-btn');
+    const success = document.getElementById('cf-success');
+    const error = document.getElementById('cf-error');
+    btn.disabled = true;
+    btn.textContent = '⏳ Envoi en cours...';
+    error.classList.remove('show');
+    try {
+      const data = new FormData(contactForm);
+      const res = await fetch(contactForm.action, {
+        method: 'POST', body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        contactForm.style.display = 'none';
+        success.classList.add('show');
+      } else {
+        throw new Error('Erreur serveur');
+      }
+    } catch(err) {
+      btn.disabled = false;
+      btn.textContent = '📤 Envoyer le message';
+      error.classList.add('show');
+    }
+  });
+}
 
 // Newsletter
 function submitNewsletter() {
@@ -725,12 +958,4 @@ function submitNewsletter() {
 }
 
 // Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
-  });
-});
-</script>
-</body>
-</html>
+document.querySelectorAll('a[hre
