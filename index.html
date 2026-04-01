@@ -946,15 +946,23 @@ footer {
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231C4A2E'/><text y='.9em' font-size='70' x='50%' text-anchor='middle' font-family='Arial Black'>🌿</text></svg>" />
 <script>
-// Scroll reveal
+// Scroll reveal — avec fallback immédiat
 const obs = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
+  entries.forEach((e) => {
     if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 100);
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
     }
   });
-}, { threshold: 0.08 });
+}, { threshold: 0.01, rootMargin: '0px 0px -20px 0px' });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Fallback : rendre tout visible après 1.5s si pas encore déclenché
+setTimeout(() => {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+    el.classList.add('visible');
+  });
+}, 1500);
 
 // Mobile menu
 function toggleMobileMenu() {
