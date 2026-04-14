@@ -3,7 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Afryx.io — Technologie pour l'Agriculture Africaine</title>
+
+<!-- ══ SEO PRIMAIRE ══ -->
+<title>Afryx.io — Solutions Numériques pour l'Afrique | EduLink & AgroYield</title>
+<meta name="description" content="Afryx.io développe des solutions numériques innovantes pour l'Afrique : EduLink (gestion scolaire) et AgroYield (agriculture IA). Accessibles, hors-ligne, conçus au Bénin.">
+<meta name="keywords" content="EduLink, AgroYield, Afryx, Bénin, gestion scolaire, agriculture Afrique, logiciel école, application scolaire, EdTech Afrique, AgriTech Bénin">
+<meta name="author" content="Afryx.io — Cotonou, Bénin">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://afryx.io">
+
+<!-- ══ OPEN GRAPH (Facebook, WhatsApp, LinkedIn) ══ -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://afryx.io">
+<meta property="og:title" content="Afryx.io — Solutions Numériques pour l'Afrique">
+<meta property="og:description" content="EduLink & AgroYield — Des outils numériques conçus par des Africains pour les réalités africaines. Gestion scolaire, agriculture IA, hors-ligne.">
+<meta property="og:image" content="https://afryx.io/og-image.png">
+<meta property="og:locale" content="fr_BJ">
+<meta property="og:site_name" content="Afryx.io">
+
+<!-- ══ TWITTER CARD ══ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Afryx.io — Solutions Numériques pour l'Afrique">
+<meta name="twitter:description" content="EduLink & AgroYield — conçus au Bénin pour l'Afrique entière.">
+<meta name="twitter:image" content="https://afryx.io/og-image.png">
+
+<!-- ══ SCHEMA.ORG (Google Rich Results) ══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Afryx.io",
+  "url": "https://afryx.io",
+  "logo": "https://afryx.io/icons/icon-192.png",
+  "description": "Solutions numériques innovantes pour l'Afrique — EduLink et AgroYield",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cotonou",
+    "addressCountry": "BJ"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "contact@afryx.io",
+    "contactType": "customer service"
+  },
+  "sameAs": ["https://app.afryx.io"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Produits Afryx.io",
+    "itemListElement": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "EduLink",
+        "applicationCategory": "EducationalApplication",
+        "description": "Plateforme de gestion scolaire complète pour les établissements africains",
+        "url": "https://app.afryx.io",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "XOF",
+          "description": "Plan Starter gratuit disponible"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "AgroYield",
+        "applicationCategory": "UtilitiesApplication",
+        "description": "Optimisation agricole par intelligence artificielle pour les paysans africains"
+      }
+    ]
+  }
+}
+</script>
+
+<!-- ══ FAVICON ══ -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231C4A2E'/><text y='.9em' font-size='70' x='50%' text-anchor='middle'>🌿</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231C4A2E'/><text y='.9em' font-size='70' x='50%' text-anchor='middle'>🌿</text></svg>">
+<meta name="theme-color" content="#1C4A2E">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
 <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -729,6 +808,176 @@ footer {
   .el-features-grid,.el-pricing-grid,.blog-grid { grid-template-columns:1fr; }
   .el-plan.popular { transform:scale(1); }
 }
+/* ══════════════════════════════════════════════
+   BILINGUE — Bouton langue
+══════════════════════════════════════════════ */
+.lang-btn {
+  display:flex; align-items:center; gap:6px;
+  background:rgba(247,240,228,.08); border:1px solid rgba(247,240,228,.15);
+  border-radius:20px; padding:6px 14px;
+  font-size:12px; font-weight:700; color:rgba(247,240,228,.7);
+  cursor:pointer; transition:all .2s; font-family:'DM Sans',sans-serif;
+  letter-spacing:.04em;
+}
+.lang-btn:hover { background:rgba(247,240,228,.15); color:var(--cream); }
+.lang-flag { font-size:14px; }
+
+/* Éléments traduits */
+[data-fr], [data-en] { transition:opacity .2s; }
+
+/* ══════════════════════════════════════════════
+   MOBILE AMÉLIORÉ
+══════════════════════════════════════════════ */
+@media(max-width:768px) {
+  /* Hero mobile */
+  .hero { padding:5rem 1.2rem 3rem !important; gap:2rem !important; }
+  h1 { font-size:clamp(38px,10vw,52px) !important; }
+  .hero-sub { font-size:14px !important; }
+  .hero-actions { flex-direction:column; gap:.75rem; }
+  .btn-main, .btn-ghost { justify-content:center; text-align:center; padding:14px 20px; }
+
+  /* Agro card mobile */
+  .agro-card { padding:1.2rem; }
+  .ac-features { grid-template-columns:1fr 1fr !important; }
+  .ac-stats { grid-template-columns:1fr 1fr 1fr; }
+
+  /* About mobile */
+  .about-section { padding:2.5rem 1.2rem !important; gap:1.5rem !important; }
+  .about-title { font-size:clamp(24px,7vw,36px) !important; }
+  .value-item { padding:.85rem; }
+
+  /* EduLink section mobile */
+  .edulink-hero { margin:1rem 1.2rem !important; padding:1.5rem 1.2rem !important; }
+  .el-features-grid { grid-template-columns:1fr !important; }
+  .el-pricing-grid { grid-template-columns:1fr !important; }
+  .el-plan.popular { transform:scale(1) !important; }
+  .el-features-section, .el-pricing-section { padding:2.5rem 1.2rem !important; }
+
+  /* Blog mobile */
+  .blog-grid { grid-template-columns:1fr !important; }
+  .blog-section { padding:2.5rem 1.2rem !important; }
+
+  /* Contact mobile */
+  .contact-section { padding:2.5rem 1.2rem !important; }
+  .contact-grid { grid-template-columns:1fr !important; gap:1.5rem !important; }
+  .cf-row { grid-template-columns:1fr !important; }
+
+  /* Newsletter mobile */
+  .newsletter { margin:0 1.2rem 2rem !important; padding:1.8rem 1.2rem !important; }
+
+  /* Soon section mobile */
+  .soon-section { padding:2.5rem 1.2rem !important; }
+  .soon-grid { grid-template-columns:1fr !important; }
+
+  /* Footer mobile */
+  footer { padding:1.5rem 1.2rem !important; flex-direction:column; text-align:center; }
+  .footer-links { flex-wrap:wrap; justify-content:center; gap:.75rem; }
+
+  /* Pricing detail mobile */
+  .pricing-detail-grid { grid-template-columns:1fr !important; }
+  .pricing-compare-table { font-size:11px; }
+}
+
+@media(max-width:480px) {
+  nav { padding:.85rem 1rem; }
+  .logo { font-size:17px; }
+  .nav-btn { padding:7px 14px; font-size:12px; }
+  .ac-features { grid-template-columns:1fr !important; }
+  .hero-kpi { gap:1rem !important; }
+}
+
+/* ══════════════════════════════════════════════
+   PAGE TARIFS DÉTAILLÉE
+══════════════════════════════════════════════ */
+.pricing-page { padding:5rem 3rem; position:relative; z-index:1; }
+.pricing-toggle {
+  display:flex; align-items:center; justify-content:center; gap:1rem;
+  margin-bottom:3rem;
+}
+.pricing-toggle-label { font-size:14px; font-weight:600; color:rgba(247,240,228,.5); }
+.pricing-toggle-label.active { color:var(--cream); }
+.toggle-period {
+  width:52px; height:28px; border-radius:14px; background:rgba(247,240,228,.1);
+  border:1px solid rgba(247,240,228,.2); cursor:pointer; position:relative;
+  transition:background .2s;
+}
+.toggle-period.annual { background:var(--moss); }
+.toggle-period::after {
+  content:''; position:absolute; top:3px; left:3px;
+  width:20px; height:20px; border-radius:50%; background:var(--cream);
+  transition:transform .2s;
+}
+.toggle-period.annual::after { transform:translateX(24px); }
+.promo-badge {
+  background:var(--gold); color:var(--earth); font-size:10px; font-weight:800;
+  padding:3px 10px; border-radius:20px; letter-spacing:.06em;
+}
+
+/* Tableau comparatif */
+.pricing-compare { max-width:1100px; margin:0 auto; }
+.pricing-compare-table {
+  width:100%; border-collapse:collapse; background:rgba(247,240,228,.03);
+  border-radius:16px; overflow:hidden;
+  border:1px solid rgba(247,240,228,.08);
+}
+.pricing-compare-table th {
+  padding:1rem; text-align:center; font-size:13px; font-weight:700;
+  color:var(--cream); background:rgba(247,240,228,.05);
+  border-bottom:1px solid rgba(247,240,228,.1);
+}
+.pricing-compare-table th:first-child { text-align:left; }
+.pricing-compare-table td {
+  padding:.85rem 1rem; font-size:13px; color:rgba(247,240,228,.6);
+  border-bottom:1px solid rgba(247,240,228,.05);
+}
+.pricing-compare-table td:first-child { font-weight:600; color:rgba(247,240,228,.85); }
+.pricing-compare-table td:not(:first-child) { text-align:center; }
+.pricing-compare-table tr:hover td { background:rgba(247,240,228,.03); }
+.pricing-compare-table .section-row td {
+  background:rgba(240,180,41,.06); color:var(--gold);
+  font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  padding:.5rem 1rem;
+}
+.check-yes { color:#4ADE80; font-size:16px; }
+.check-no  { color:rgba(247,240,228,.2); font-size:16px; }
+.check-partial { color:var(--gold); font-size:13px; font-weight:700; }
+
+/* Plan header in table */
+.plan-col-header { padding:1.5rem 1rem !important; }
+.plan-col-name { font-size:16px; font-weight:900; margin-bottom:.25rem; }
+.plan-col-price { font-size:22px; font-weight:900; color:var(--gold); }
+.plan-col-price span { font-size:12px; color:rgba(247,240,228,.4); font-weight:400; }
+.plan-col-cta {
+  display:block; margin-top:.75rem; padding:8px 16px; border-radius:8px;
+  font-size:12px; font-weight:700; text-decoration:none; transition:all .2s;
+  font-family:'DM Sans',sans-serif; text-align:center;
+}
+.plan-col-cta.outline { border:1px solid rgba(247,240,228,.2); color:rgba(247,240,228,.65); }
+.plan-col-cta.outline:hover { border-color:var(--gold); color:var(--gold); }
+.plan-col-cta.filled { background:var(--moss); color:var(--cream); border:none; }
+.plan-col-cta.filled:hover { background:var(--leaf); }
+
+/* FAQ tarifs */
+.faq-section { max-width:800px; margin:4rem auto 0; }
+.faq-item {
+  border:1px solid rgba(247,240,228,.08); border-radius:12px;
+  margin-bottom:.75rem; overflow:hidden; transition:all .2s;
+}
+.faq-item:hover { border-color:rgba(247,240,228,.15); }
+.faq-question {
+  padding:1rem 1.2rem; cursor:pointer; display:flex; align-items:center;
+  justify-content:space-between; font-size:14px; font-weight:600;
+  color:var(--cream); background:rgba(247,240,228,.03);
+}
+.faq-arrow { transition:transform .2s; color:var(--gold); font-size:18px; }
+.faq-item.open .faq-arrow { transform:rotate(180deg); }
+.faq-answer {
+  display:none; padding:0 1.2rem 1rem;
+  font-size:13.5px; color:rgba(247,240,228,.5); line-height:1.8;
+}
+.faq-item.open .faq-answer { display:block; }
+
+@media(max-width:768px){ .pricing-page { padding:3rem 1.2rem; } }
 </style>
 </head>
 <body>
@@ -740,24 +989,26 @@ footer {
     Afryx<span>.io</span>
   </div>
   <div class="nav-right">
-    <a href="#about" class="nav-link">Notre vision</a>
-    <a href="#edulink-page" class="nav-link">EduLink</a>
-    <a href="#blog" class="nav-link">Blog</a>
-    <a href="#contact-form" class="nav-link">Contact</a>
-    <a href="#newsletter" class="nav-link">Accès anticipé</a>
-    <a href="#newsletter" class="nav-btn">Accès anticipé →</a>
+    <a href="#about" class="nav-link" data-fr="Notre vision" data-en="Our vision">Notre vision</a>
+    <a href="#edulink-page" class="nav-link" data-fr="EduLink" data-en="EduLink">EduLink</a>
+    <a href="#tarifs" class="nav-link" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+    <a href="#blog" class="nav-link" data-fr="Blog" data-en="Blog">Blog</a>
+    <a href="#contact-form" class="nav-link" data-fr="Contact" data-en="Contact">Contact</a>
+    <button class="lang-btn" onclick="toggleLang()" id="lang-btn"><span class="lang-flag">🇫🇷</span> FR</button>
+    <a href="#newsletter" class="nav-btn" data-fr="Accès anticipé →" data-en="Early access →">Accès anticipé →</a>
     <button class="nav-menu-btn" onclick="toggleMobileMenu()" id="menu-btn">☰</button>
   </div>
 </nav>
 
 <!-- Menu mobile -->
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#about" onclick="closeMobileMenu()">🌍 Notre vision</a>
+  <a href="#about" onclick="closeMobileMenu()" data-fr="🌍 Notre vision" data-en="🌍 Our vision">🌍 Notre vision</a>
   <a href="#edulink-page" onclick="closeMobileMenu()">🎓 EduLink</a>
-  <a href="#blog" onclick="closeMobileMenu()">📰 Blog</a>
-  <a href="#soon" onclick="closeMobileMenu()">⏳ Nos produits</a>
-  <a href="#contact-form" onclick="closeMobileMenu()">✉️ Contact</a>
-  <a href="#newsletter" class="mm-cta" onclick="closeMobileMenu()">🚀 Accès anticipé</a>
+  <a href="#tarifs" onclick="closeMobileMenu()" data-fr="💰 Tarifs EduLink" data-en="💰 EduLink Pricing">💰 Tarifs EduLink</a>
+  <a href="#blog" onclick="closeMobileMenu()" data-fr="📰 Blog" data-en="📰 Blog">📰 Blog</a>
+  <a href="#soon" onclick="closeMobileMenu()" data-fr="⏳ Nos produits" data-en="⏳ Our products">⏳ Nos produits</a>
+  <a href="#contact-form" onclick="closeMobileMenu()" data-fr="✉️ Contact" data-en="✉️ Contact">✉️ Contact</a>
+  <a href="#newsletter" class="mm-cta" onclick="closeMobileMenu()" data-fr="🚀 Accès anticipé" data-en="🚀 Early access">🚀 Accès anticipé</a>
 </div>
 
 <!-- HERO -->
@@ -1089,7 +1340,7 @@ footer {
         <div class="el-plan-feature">SMS parents (500/mois)</div>
         <div class="el-plan-feature">Portail parents & élèves</div>
         <div class="el-plan-feature">Support prioritaire</div>
-        <a href="mailto:info@afryx.io?subject=EduLink Pro" class="el-plan-cta filled">Démarrer avec Pro</a>
+        <a href="/cdn-cgi/l/email-protection#325b5c545d725354404b4a1c5b5d0d414750585751460f7756477e5b5c591262405d" class="el-plan-cta filled">Démarrer avec Pro</a>
       </div>
       <!-- Réseau -->
       <div class="el-plan">
@@ -1102,7 +1353,7 @@ footer {
         <div class="el-plan-feature">Personnalisation complète</div>
         <div class="el-plan-feature">Intégration Mobile Money</div>
         <div class="el-plan-feature">Support dédié 24/7</div>
-        <a href="mailto:contact@afryx.io?subject=EduLink Réseau" class="el-plan-cta outline">Nous contacter</a>
+        <a href="/cdn-cgi/l/email-protection#1b7874756f7a786f5b7a7d69626335727424686e79717e786f265e7f6e577275703b49d8b2687e7a6e" class="el-plan-cta outline">Nous contacter</a>
       </div>
     </div>
   </div>
@@ -1201,9 +1452,158 @@ footer {
 
     <!-- CTA Blog -->
     <div style="text-align:center;margin-top:3rem">
-      <a href="mailto:contact@afryx.io?subject=Newsletter Afryx" class="btn-main" style="display:inline-flex">
+      <a href="/cdn-cgi/l/email-protection#12717d7c66737166527374606b6a3c7b7d2d616770787771662f5c7765617e7766667760325374606b6a" class="btn-main" style="display:inline-flex">
         📧 S'abonner aux articles
       </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ TARIFS DÉTAILLÉS ══ -->
+<section id="tarifs">
+  <div class="pricing-page">
+    <div class="el-section-header">
+      <div class="el-section-eyebrow" data-fr="Tarifs EduLink" data-en="EduLink Pricing">Tarifs EduLink</div>
+      <div class="el-section-title" data-fr="Choisissez votre plan" data-en="Choose your plan">Choisissez votre plan</div>
+      <div class="el-section-sub" data-fr="Sans engagement — Passez à un plan supérieur à tout moment" data-en="No commitment — Upgrade anytime">Sans engagement — Passez à un plan supérieur à tout moment</div>
+    </div>
+
+    <!-- Toggle mensuel/annuel -->
+    <div class="pricing-toggle">
+      <span class="pricing-toggle-label active" id="toggle-mensuel" data-fr="Mensuel" data-en="Monthly">Mensuel</span>
+      <div class="toggle-period" id="period-toggle" onclick="togglePeriod()"></div>
+      <span class="pricing-toggle-label" id="toggle-annuel" data-fr="Annuel" data-en="Annual">Annuel</span>
+      <span class="promo-badge" data-fr="-20%" data-en="-20%">-20%</span>
+    </div>
+
+    <!-- Tableau comparatif -->
+    <div class="pricing-compare">
+      <table class="pricing-compare-table">
+        <thead>
+          <tr>
+            <th style="width:35%"><span data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</span></th>
+            <th class="plan-col-header">
+              <div class="plan-col-name">🌱 Starter</div>
+              <div class="plan-col-price"><span data-fr="Gratuit" data-en="Free">Gratuit</span></div>
+              <a href="https://app.afryx.io" target="_blank" class="plan-col-cta outline" data-fr="Commencer" data-en="Get started">Commencer</a>
+            </th>
+            <th class="plan-col-header" style="background:rgba(30,58,95,.2);border:1px solid rgba(201,124,26,.3)">
+              <div class="plan-col-name">🚀 Pro</div>
+              <div class="plan-col-price" id="pro-price">25 000 <span data-fr="FCFA/mois" data-en="FCFA/mo">FCFA/mois</span></div>
+              <a href="mailto:info@afryx.io?subject=EduLink Pro" class="plan-col-cta filled" data-fr="Choisir Pro" data-en="Choose Pro">Choisir Pro</a>
+            </th>
+            <th class="plan-col-header">
+              <div class="plan-col-name">🌍 Réseau</div>
+              <div class="plan-col-price"><span data-fr="Sur devis" data-en="Custom">Sur devis</span></div>
+              <a href="mailto:contact@afryx.io" class="plan-col-cta outline" data-fr="Nous contacter" data-en="Contact us">Nous contacter</a>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Limites -->
+          <tr class="section-row"><td colspan="4" data-fr="📊 Limites" data-en="📊 Limits">📊 Limites</td></tr>
+          <tr>
+            <td data-fr="Étudiants" data-en="Students">Étudiants</td>
+            <td>100 max</td><td>500 max</td><td data-fr="Illimités" data-en="Unlimited">Illimités</td>
+          </tr>
+          <tr>
+            <td data-fr="Établissements" data-en="Institutions">Établissements</td>
+            <td>1</td><td>1</td><td data-fr="Illimités" data-en="Unlimited">Illimités</td>
+          </tr>
+          <tr>
+            <td data-fr="Utilisateurs admin" data-en="Admin users">Utilisateurs admin</td>
+            <td>2</td><td>10</td><td data-fr="Illimités" data-en="Unlimited">Illimités</td>
+          </tr>
+          <tr>
+            <td data-fr="Stockage" data-en="Storage">Stockage</td>
+            <td>500 MB</td><td>5 GB</td><td>50 GB+</td>
+          </tr>
+
+          <!-- Académique -->
+          <tr class="section-row"><td colspan="4" data-fr="🎓 Modules académiques" data-en="🎓 Academic modules">🎓 Modules académiques</td></tr>
+          <tr><td data-fr="Notes & Bulletins PDF" data-en="Grades & PDF Reports">Notes & Bulletins PDF</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+          <tr><td data-fr="Présences & Absences" data-en="Attendance">Présences & Absences</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+          <tr><td data-fr="Emploi du temps" data-en="Timetable">Emploi du temps</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+          <tr><td data-fr="Examens & Planning" data-en="Exams & Planning">Examens & Planning</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+          <tr><td data-fr="Bibliothèque numérique" data-en="Digital library">Bibliothèque numérique</td><td><span class="check-no">—</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+          <tr><td data-fr="Orientation & Stages" data-en="Career guidance">Orientation & Stages</td><td><span class="check-no">—</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+
+          <!-- Finance -->
+          <tr class="section-row"><td colspan="4" data-fr="💳 Finance & Paiements" data-en="💳 Finance & Payments">💳 Finance & Paiements</td></tr>
+          <tr><td data-fr="Gestion des frais scolaires" data-en="Fee management">Gestion des frais scolaires</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+          <tr><td data-fr="Comptabilité OHADA" data-en="OHADA Accounting">Comptabilité OHADA</td><td><span class="check-no">—</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+          <tr><td data-fr="Mobile Money (MTN/Moov)" data-en="Mobile Money">Mobile Money (MTN/Moov)</td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td><span class="check-yes">✓</span></td></tr>
+
+          <!-- Communication -->
+          <tr class="section-row"><td colspan="4" data-fr="📡 Communication" data-en="📡 Communication">📡 Communication</td></tr>
+          <tr><td data-fr="Messagerie interne" data-en="Internal messaging">Messagerie interne</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+          <tr><td data-fr="SMS parents" data-en="Parent SMS">SMS parents</td><td><span class="check-no">—</span></td><td><span class="check-partial">500/mois</span></td><td data-fr="Illimités" data-en="Unlimited">Illimités</td></tr>
+          <tr><td data-fr="Notifications push" data-en="Push notifications">Notifications push</td><td><span class="check-no">—</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+          <tr><td data-fr="Portail parents & élèves" data-en="Parent & student portal">Portail parents & élèves</td><td><span class="check-no">—</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+
+          <!-- IA & Analytics -->
+          <tr class="section-row"><td colspan="4" data-fr="🤖 Intelligence Artificielle" data-en="🤖 Artificial Intelligence">🤖 Intelligence Artificielle</td></tr>
+          <tr><td data-fr="Analytics & Rapports" data-en="Analytics & Reports">Analytics & Rapports</td><td><span class="check-partial">Basique</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+          <tr><td data-fr="Assistant IA EduLink" data-en="EduLink AI Assistant">Assistant IA EduLink</td><td><span class="check-no">—</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+          <tr><td data-fr="Prédiction de réussite" data-en="Success prediction">Prédiction de réussite</td><td><span class="check-no">—</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+          <tr><td data-fr="Dashboard Directeur" data-en="Director dashboard">Dashboard Directeur</td><td><span class="check-no">—</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+
+          <!-- Support -->
+          <tr class="section-row"><td colspan="4" data-fr="🛠️ Support" data-en="🛠️ Support">🛠️ Support</td></tr>
+          <tr><td data-fr="Support par email" data-en="Email support">Support par email</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+          <tr><td data-fr="Support prioritaire" data-en="Priority support">Support prioritaire</td><td><span class="check-no">—</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+          <tr><td data-fr="Formation & onboarding" data-en="Training & onboarding">Formation & onboarding</td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td><span class="check-yes">✓</span></td></tr>
+          <tr><td data-fr="Support dédié 24/7" data-en="Dedicated 24/7 support">Support dédié 24/7</td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td><td><span class="check-yes">✓</span></td></tr>
+        </tbody>
+      </table>
+
+      <!-- FAQ -->
+      <div class="faq-section">
+        <div class="el-section-header" style="margin-bottom:2rem">
+          <div class="el-section-title" style="font-size:28px" data-fr="Questions fréquentes" data-en="Frequently asked questions">Questions fréquentes</div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span data-fr="Puis-je passer du plan Starter au plan Pro ?" data-en="Can I upgrade from Starter to Pro?">Puis-je passer du plan Starter au plan Pro ?</span>
+            <span class="faq-arrow">▾</span>
+          </div>
+          <div class="faq-answer" data-fr="Oui, à tout moment ! Vos données sont conservées intégralement lors du passage au plan Pro. Contactez-nous sur info@afryx.io pour effectuer la mise à niveau." data-en="Yes, anytime! Your data is fully preserved when upgrading to Pro. Contact us at info@afryx.io to upgrade.">Oui, à tout moment ! Vos données sont conservées intégralement lors du passage au plan Pro. Contactez-nous sur info@afryx.io pour effectuer la mise à niveau.</div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span data-fr="EduLink fonctionne-t-il sans connexion internet ?" data-en="Does EduLink work offline?">EduLink fonctionne-t-il sans connexion internet ?</span>
+            <span class="faq-arrow">▾</span>
+          </div>
+          <div class="faq-answer" data-fr="Oui ! EduLink est une Progressive Web App (PWA) qui fonctionne hors-ligne. Les données saisies sans connexion se synchronisent automatiquement dès qu'internet est disponible." data-en="Yes! EduLink is a Progressive Web App (PWA) that works offline. Data entered without connection syncs automatically when internet is available.">Oui ! EduLink est une Progressive Web App (PWA) qui fonctionne hors-ligne. Les données saisies sans connexion se synchronisent automatiquement dès qu'internet est disponible.</div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span data-fr="Comment les données de mon école sont-elles sécurisées ?" data-en="How is my school's data secured?">Comment les données de mon école sont-elles sécurisées ?</span>
+            <span class="faq-arrow">▾</span>
+          </div>
+          <div class="faq-answer" data-fr="Chaque école dispose de sa propre base de données Supabase isolée, chiffrée et sécurisée. Vos données ne sont jamais partagées avec d'autres établissements. Sauvegardes automatiques quotidiennes incluses." data-en="Each school has its own isolated, encrypted Supabase database. Your data is never shared with other institutions. Automatic daily backups included.">Chaque école dispose de sa propre base de données Supabase isolée, chiffrée et sécurisée. Vos données ne sont jamais partagées avec d'autres établissements. Sauvegardes automatiques quotidiennes incluses.</div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span data-fr="Proposez-vous une démo gratuite ?" data-en="Do you offer a free demo?">Proposez-vous une démo gratuite ?</span>
+            <span class="faq-arrow">▾</span>
+          </div>
+          <div class="faq-answer" data-fr="Oui ! Le plan Starter est gratuit et inclut les fonctionnalités essentielles pour jusqu'à 100 étudiants. Vous pouvez également demander une démonstration personnalisée en nous contactant sur demo@afryx.io." data-en="Yes! The Starter plan is free and includes essential features for up to 100 students. You can also request a personalized demo by contacting us at demo@afryx.io.">Oui ! Le plan Starter est gratuit et inclut les fonctionnalités essentielles pour jusqu'à 100 étudiants. Vous pouvez également demander une démonstration personnalisée en nous contactant sur demo@afryx.io.</div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span data-fr="EduLink est-il disponible en dehors du Bénin ?" data-en="Is EduLink available outside Benin?">EduLink est-il disponible en dehors du Bénin ?</span>
+            <span class="faq-arrow">▾</span>
+          </div>
+          <div class="faq-answer" data-fr="EduLink est conçu pour toute l'Afrique francophone. Il supporte le FCFA et les systèmes de notation africains. Nous accompagnons déjà des établissements au Togo, en Côte d'Ivoire et au Sénégal." data-en="EduLink is designed for all of Francophone Africa. It supports FCFA and African grading systems. We already support institutions in Togo, Ivory Coast and Senegal.">EduLink est conçu pour toute l'Afrique francophone. Il supporte le FCFA et les systèmes de notation africains. Nous accompagnons déjà des établissements au Togo, en Côte d'Ivoire et au Sénégal.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1222,21 +1622,21 @@ footer {
         <div class="ci-ico">📧</div>
         <div class="ci-body">
           <div class="ci-lbl">Email général</div>
-          <div class="ci-val">contact@afryx.io</div>
+          <div class="ci-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d6b5b9b8a2b7b5a296b7b0a4afaef8bfb9">[email&#160;protected]</a></div>
         </div>
       </div>
       <div class="contact-item">
         <div class="ci-ico">🎓</div>
         <div class="ci-body">
           <div class="ci-lbl">EduLink — Écoles</div>
-          <div class="ci-val">info@afryx.io</div>
+          <div class="ci-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="83eaede5ecc3e2e5f1fafbadeaec">[email&#160;protected]</a></div>
         </div>
       </div>
       <div class="contact-item">
         <div class="ci-ico">🛠️</div>
         <div class="ci-body">
           <div class="ci-lbl">Support technique</div>
-          <div class="ci-val">soutien@afryx.io</div>
+          <div class="ci-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="52213d27263b373c123334202b2a7c3b3d">[email&#160;protected]</a></div>
         </div>
       </div>
       <div class="contact-item">
@@ -1312,7 +1712,7 @@ footer {
         <span style="font-size:13px;font-weight:400;opacity:.8">Nous vous répondrons sous 24h à l'adresse indiquée.</span>
       </div>
       <div class="cf-error" id="cf-error">
-        ❌ Erreur d'envoi. Veuillez réessayer ou écrire directement à contact@afryx.io
+        ❌ Erreur d'envoi. Veuillez réessayer ou écrire directement à <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bfdcd0d1cbdedccbffded9cdc6c791d6d0">[email&#160;protected]</a>
       </div>
     </div>
   </div>
@@ -1343,10 +1743,73 @@ footer {
 </footer>
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231C4A2E'/><text y='.9em' font-size='70' x='50%' text-anchor='middle' font-family='Arial Black'>🌿</text></svg>" />
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Tout est visible par défaut — pas d'animation reveal nécessaire
 
-// Mobile menu
+// ══ BILINGUE ══════════════════════════════════════════
+let currentLang = 'fr';
+
+function toggleLang() {
+  currentLang = currentLang === 'fr' ? 'en' : 'fr';
+  const btn = document.getElementById('lang-btn');
+  if (btn) btn.innerHTML = currentLang === 'fr'
+    ? '<span class="lang-flag">🇫🇷</span> FR'
+    : '<span class="lang-flag">🇬🇧</span> EN';
+
+  // Translate all elements with data-fr / data-en
+  document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+    const val = el.getAttribute('data-' + currentLang);
+    if (val) {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = val;
+      } else if (el.tagName === 'A' || el.tagName === 'BUTTON') {
+        el.textContent = val;
+      } else {
+        el.textContent = val;
+      }
+    }
+  });
+
+  // Update page title and meta
+  document.title = currentLang === 'fr'
+    ? 'Afryx.io — Solutions Numériques pour l\'Afrique | EduLink & AgroYield'
+    : 'Afryx.io — Digital Solutions for Africa | EduLink & AgroYield';
+
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) metaDesc.content = currentLang === 'fr'
+    ? 'EduLink & AgroYield — Des outils numériques conçus au Bénin pour les réalités africaines.'
+    : 'EduLink & AgroYield — Digital tools built in Benin for African realities.';
+}
+
+// ══ TARIFS TOGGLE MENSUEL/ANNUEL ══════════════════════
+let isAnnual = false;
+
+function togglePeriod() {
+  isAnnual = !isAnnual;
+  const toggle = document.getElementById('period-toggle');
+  const mensuel = document.getElementById('toggle-mensuel');
+  const annuel = document.getElementById('toggle-annuel');
+  const proPrice = document.getElementById('pro-price');
+
+  if (toggle) toggle.classList.toggle('annual', isAnnual);
+  if (mensuel) mensuel.classList.toggle('active', !isAnnual);
+  if (annuel) annuel.classList.toggle('active', isAnnual);
+
+  if (proPrice) {
+    const price = isAnnual ? '20 000' : '25 000';
+    const label = currentLang === 'fr' ? 'FCFA/mois' : 'FCFA/mo';
+    proPrice.innerHTML = `${price} <span>${label}</span>`;
+  }
+}
+
+// ══ FAQ ════════════════════════════════════════════════
+function toggleFaq(item) {
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// ══ Mobile menu
 function toggleMobileMenu() {
   const m = document.getElementById('mobile-menu');
   const btn = document.getElementById('menu-btn');
@@ -1399,24 +1862,4 @@ function submitNewsletter() {
     setTimeout(() => { input.style.borderBottom=''; input.placeholder='votre@email.com'; }, 2000);
     return;
   }
-  btn.textContent = '✅ Inscrit !';
-  btn.style.background = '#2D6A44';
-  input.value = '';
-  input.placeholder = 'Merci ! On vous tient informé 🌾';
-  setTimeout(() => { btn.textContent = 'Rejoindre →'; btn.style.background=''; input.placeholder='votre@email.com'; }, 4000);
-}
-
-// Afficher message succès si retour après envoi
-if (window.location.search.includes('merci=1')) {
-  const form = document.getElementById('contact-form-el');
-  const success = document.getElementById('cf-success');
-  if (form) form.style.display = 'none';
-  if (success) success.classList.add('show');
-  // Scroller vers le formulaire
-  setTimeout(() => {
-    document.getElementById('contact-form')?.scrollIntoView({behavior:'smooth'});
-  }, 300);
-}
-
-// Smooth scroll
-document.querySelectorAll('a[hre
+  btn.textContent = '✅
