@@ -1032,10 +1032,10 @@ footer {
       Afryx.io développe des solutions numériques pensées pour les <strong>agriculteurs, entrepreneurs et institutions africains</strong> — accessibles, hors-ligne et alimentées par l'IA.
     </p>
     <div class="hero-actions">
-      <a href="#agro" class="btn-main">
+      <a href="#agro" class="btn-main" onclick="event.preventDefault();document.getElementById('agro').scrollIntoView({behavior:'smooth',block:'center'});">
         🌾 Découvrir AgroYield
       </a>
-      <a href="#newsletter" class="btn-ghost">
+      <a href="#soon" class="btn-ghost" onclick="event.preventDefault();document.getElementById('soon').scrollIntoView({behavior:'smooth'});">
         Autres produits →
       </a>
     </div>
@@ -1737,7 +1737,7 @@ footer {
   <div class="footer-links">
     <a href="#">Mentions légales</a>
     <a href="#">Confidentialité</a>
-    <a href="#contact-form"><span class="__cf_email__" data-cfemail="d5b6babba1b4b6a195b4b3a7acadfbbcba">[email&#160;protected]</span></a>
+    <a href="mailto:contact@afryx.io">contact@afryx.io</a>
   </div>
   <div class="footer-copy">© 2026 Afryx.io · Cotonou, Bénin</div>
 </footer>
@@ -1855,7 +1855,7 @@ if (contactForm) {
 // Newsletter
 function submitNewsletter() {
   const input = document.getElementById('nl-email');
-  const btn = event.target;
+  const btn = document.querySelector('.nl-form button');
   if (!input.value || !input.value.includes('@')) {
     input.style.borderBottom = '2px solid #E8520A';
     input.placeholder = 'Email invalide';
