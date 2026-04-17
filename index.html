@@ -991,6 +991,7 @@ footer {
   <div class="nav-right">
     <a href="#about" class="nav-link" data-fr="Notre vision" data-en="Our vision">Notre vision</a>
     <a href="#edulink-page" class="nav-link" data-fr="EduLink" data-en="EduLink">EduLink</a>
+    <a href="#banka-page" class="nav-link" data-fr="BANKA" data-en="BANKA">BANKA</a>
     <a href="#tarifs" class="nav-link" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
     <a href="#blog" class="nav-link" data-fr="Blog" data-en="Blog">Blog</a>
     <a href="#contact-form" class="nav-link" data-fr="Contact" data-en="Contact">Contact</a>
@@ -1004,6 +1005,7 @@ footer {
 <div class="mobile-menu" id="mobile-menu">
   <a href="#about" onclick="closeMobileMenu()" data-fr="🌍 Notre vision" data-en="🌍 Our vision">🌍 Notre vision</a>
   <a href="#edulink-page" onclick="closeMobileMenu()">🎓 EduLink</a>
+    <a href="#banka-page" onclick="closeMobileMenu()">🏦 BANKA</a>
   <a href="#tarifs" onclick="closeMobileMenu()" data-fr="💰 Tarifs EduLink" data-en="💰 EduLink Pricing">💰 Tarifs EduLink</a>
   <a href="#blog" onclick="closeMobileMenu()" data-fr="📰 Blog" data-en="📰 Blog">📰 Blog</a>
   <a href="#soon" onclick="closeMobileMenu()" data-fr="⏳ Nos produits" data-en="⏳ Our products">⏳ Nos produits</a>
@@ -1132,21 +1134,21 @@ footer {
         </div>
       </div>
 
-      <div class="soon-card reveal">
-        <div class="sc-lock">
-          <div class="lock-ico">🔒</div>
-          <div class="lock-txt">Bientôt disponible</div>
-        </div>
+      <div class="soon-card reveal" style="border-color:rgba(240,180,41,.25);background:linear-gradient(135deg,rgba(240,180,41,.04),rgba(29,74,46,.04));cursor:pointer" onclick="document.getElementById('banka-page').scrollIntoView({behavior:'smooth'})">
         <div class="sc-top">
-          <div class="sc-ico" style="background:rgba(107,45,139,.15)">💼</div>
-          <div class="sc-badge">Business</div>
+          <div class="sc-ico" style="background:linear-gradient(135deg,rgba(240,180,41,.2),rgba(29,74,46,.2));border:1px solid rgba(240,180,41,.3)">🏦</div>
+          <div class="sc-badge" style="background:rgba(74,222,128,.15);color:#4ADE80;border-color:rgba(74,222,128,.3)">● Disponible</div>
         </div>
-        <div class="sc-name">Suite Business</div>
-        <p class="sc-desc">ERP complet pour PME africaines — comptabilité OHADA, RH, CRM, facturation et tableaux de bord temps réel.</p>
+        <div class="sc-name" style="color:var(--cream)">BANKA</div>
+        <p class="sc-desc" style="color:rgba(247,240,228,.55)">Logiciel de gestion pour Institutions de Microfinance — scoring IA explicable, recouvrement intelligent, conformité BCEAO/UEMOA.</p>
         <div class="sc-sectors">
-          <div class="sc-sector">PME</div>
-          <div class="sc-sector">Startups</div>
-          <div class="sc-sector">Commerces</div>
+          <div class="sc-sector" style="background:rgba(240,180,41,.1);color:var(--gold);border-color:rgba(240,180,41,.2)">Microfinance</div>
+          <div class="sc-sector" style="background:rgba(240,180,41,.1);color:var(--gold);border-color:rgba(240,180,41,.2)">SFD</div>
+          <div class="sc-sector" style="background:rgba(240,180,41,.1);color:var(--gold);border-color:rgba(240,180,41,.2)">Coopératives</div>
+        </div>
+        <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(240,180,41,.15);display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--gold);font-weight:700">
+          <span>Découvrir BANKA</span>
+          <span style="font-size:14px">→</span>
         </div>
       </div>
 
@@ -1356,6 +1358,116 @@ footer {
         <a href="#contact-form" class="el-plan-cta outline">Nous contacter</a>
       </div>
     </div>
+  </div>
+
+</section>
+<!-- ══ PAGE BANKA ══ -->
+<section id="banka-page">
+
+  <!-- Hero BANKA -->
+  <div class="edulink-hero" style="background:linear-gradient(135deg,#1A1208 0%,#3a2a0e 50%,#1C4A2E 100%)">
+    <div style="position:relative;z-index:1">
+      <div class="el-hero-badge" style="background:rgba(240,180,41,.15);border-color:rgba(240,180,41,.3);color:#F0B429">🏦 BANKA — Disponible maintenant</div>
+      <h2>Le logiciel pensé pour<br>la <span style="color:#F0B429">microfinance</span> africaine</h2>
+      <p>BANKA accompagne les Institutions de Microfinance d'Afrique de l'Ouest dans leur gestion quotidienne — clients, crédits, épargne, recouvrement, conformité BCEAO/UEMOA — avec une intelligence artificielle explicable et entièrement transparente.</p>
+      <div class="el-hero-btns">
+        <a href="https://banka.afryx.io" target="_blank" class="btn-el-main" style="background:#F0B429;color:#1A1208">🚀 Tester BANKA</a>
+        <a href="#banka-tarifs" class="btn-el-ghost">Voir les fonctionnalités →</a>
+      </div>
+    </div>
+    <div style="position:relative;z-index:1">
+      <div class="el-hero-stats">
+        <div class="el-stat"><div class="es-val" style="color:#F0B429">12</div><div class="es-lbl">Modules</div></div>
+        <div class="el-stat"><div class="es-val" style="color:#F0B429">XAI</div><div class="es-lbl">Scoring IA</div></div>
+        <div class="el-stat"><div class="es-val" style="color:#F0B429">27%</div><div class="es-lbl">Taux usure max</div></div>
+        <div class="el-stat"><div class="es-val" style="color:#F0B429">UEMOA</div><div class="es-lbl">Zone BCEAO</div></div>
+      </div>
+      <!-- Mini dashboard preview -->
+      <div style="margin-top:2rem;background:rgba(240,180,41,.06);border-radius:16px;padding:1.5rem;border:1px solid rgba(240,180,41,.15)">
+        <div style="font-size:12px;font-weight:700;color:rgba(247,240,228,.5);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem">Aperçu — Tableau de bord IMF</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+          <div style="background:rgba(247,240,228,.05);border-radius:10px;padding:.85rem">
+            <div style="font-size:24px;font-weight:900;color:#F0B429">142</div>
+            <div style="font-size:11px;color:rgba(247,240,228,.45)">Clients actifs</div>
+          </div>
+          <div style="background:rgba(247,240,228,.05);border-radius:10px;padding:.85rem">
+            <div style="font-size:24px;font-weight:900;color:#4ADE80">3.2%</div>
+            <div style="font-size:11px;color:rgba(247,240,228,.45)">PAR 30 jours</div>
+          </div>
+          <div style="background:rgba(247,240,228,.05);border-radius:10px;padding:.85rem">
+            <div style="font-size:24px;font-weight:900;color:#F0B429">38M</div>
+            <div style="font-size:11px;color:rgba(247,240,228,.45)">Encours FCFA</div>
+          </div>
+          <div style="background:rgba(247,240,228,.05);border-radius:10px;padding:.85rem">
+            <div style="font-size:24px;font-weight:900;color:#A78BFA">68/100</div>
+            <div style="font-size:11px;color:rgba(247,240,228,.45)">Score IA moyen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fonctionnalités BANKA -->
+  <div class="el-features-section" id="banka-tarifs">
+    <div class="el-section-header">
+      <div class="el-section-eyebrow" style="color:#F0B429">Fonctionnalités</div>
+      <div class="el-section-title">Tout ce dont votre IMF a besoin</div>
+      <div class="el-section-sub">12 modules conçus pour les réalités des Institutions de Microfinance UEMOA</div>
+    </div>
+    <div class="el-features-grid">
+      <div class="el-feat-card">
+        <div class="el-feat-ico">🧠</div>
+        <div class="el-feat-title">Scoring IA explicable</div>
+        <div class="el-feat-desc">Chaque décision de crédit révèle ses 6 facteurs avec impact chiffré. Fini les boîtes noires, place à la transparence.</div>
+      </div>
+      <div class="el-feat-card">
+        <div class="el-feat-ico">📞</div>
+        <div class="el-feat-title">Recouvrement intelligent</div>
+        <div class="el-feat-desc">Buckets 30/60/90 jours, escalade automatique en 4 niveaux, priorisation par gravité. Vos agents savent qui appeler en premier.</div>
+      </div>
+      <div class="el-feat-card">
+        <div class="el-feat-ico">📋</div>
+        <div class="el-feat-title">Conformité BCEAO</div>
+        <div class="el-feat-desc">Plafond d'usure 27%, ratios prudentiels, catégories SFD. Tout est calibré pour la zone UEMOA dès le premier jour.</div>
+      </div>
+      <div class="el-feat-card">
+        <div class="el-feat-ico">🤖</div>
+        <div class="el-feat-title">Assistant Claude intégré</div>
+        <div class="el-feat-desc">Un expert microfinance disponible 24/7 dans le logiciel. Pour interpréter un dossier, calculer un TEG, comprendre une réglementation.</div>
+      </div>
+      <div class="el-feat-card">
+        <div class="el-feat-ico">👥</div>
+        <div class="el-feat-title">Clients & KYC</div>
+        <div class="el-feat-desc">Identification, vérification, suivi du statut KYC. Empêche l'octroi de crédit aux dossiers incomplets. Conforme LCB-FT.</div>
+      </div>
+      <div class="el-feat-card">
+        <div class="el-feat-ico">💰</div>
+        <div class="el-feat-title">Crédits & Échéanciers</div>
+        <div class="el-feat-desc">Création de dossiers, calcul amortissement, suivi des paiements. Workflow comité de crédit intégré et traçable.</div>
+      </div>
+      <div class="el-feat-card">
+        <div class="el-feat-ico">🏦</div>
+        <div class="el-feat-title">Épargne & Caisse</div>
+        <div class="el-feat-desc">Gestion des comptes d'épargne, dépôts, retraits, opérations de caisse quotidiennes. Réconciliation automatique.</div>
+      </div>
+      <div class="el-feat-card">
+        <div class="el-feat-ico">🔐</div>
+        <div class="el-feat-title">Multi-utilisateurs & Rôles</div>
+        <div class="el-feat-desc">Direction, agents terrain, caissiers, auditeurs. Chaque profil voit uniquement ce dont il a besoin. Journal d'audit complet.</div>
+      </div>
+      <div class="el-feat-card">
+        <div class="el-feat-ico">📊</div>
+        <div class="el-feat-title">Tableau de bord temps réel</div>
+        <div class="el-feat-desc">PAR, encours, taux de recouvrement, performance par agence. Les KPIs critiques d'une IMF en un coup d'œil.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Demo BANKA -->
+  <div style="max-width:1100px;margin:2rem auto 4rem;padding:3rem;background:linear-gradient(135deg,rgba(240,180,41,.1) 0%,rgba(29,74,46,.1) 100%);border:1px solid rgba(240,180,41,.25);border-radius:20px;text-align:center">
+    <div style="font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:900;letter-spacing:-.02em;margin-bottom:.75rem;color:var(--cream)">Voir <span style="color:#F0B429">BANKA</span> en action</div>
+    <p style="font-size:15px;color:rgba(247,240,228,.5);margin-bottom:1.8rem;max-width:520px;margin-left:auto;margin-right:auto">Démo interactive complète, sans inscription, sans installation. Configurez votre IMF, créez des clients, octroyez un crédit, testez le scoring IA.</p>
+    <a href="https://banka.afryx.io" target="_blank" class="btn-main" style="display:inline-flex;background:linear-gradient(135deg,#F0B429,#D4901A);color:#1A1208;border-color:rgba(240,180,41,.4)">🚀 Lancer la démo BANKA →</a>
   </div>
 
 </section>
